@@ -1,4 +1,4 @@
-A modification of OneTrainer's NVIDIA-UI Docker Image which leverages KASM Web to display the GUI through your browser.
+A modification of OneTrainer's [NVIDIA-UI Docker Image](https://github.com/Nerogar/OneTrainer/blob/daae18eaed8c0fa39289b2ff79cc2c1e08577fcb/resources/docker/NVIDIA-UI.Dockerfile) which leverages [KasmVNC](https://kasmweb.com/kasmvnc) to display the GUI through your browser.
 
 Now it's possible to run OneTrainer UI over the cloud!
 
