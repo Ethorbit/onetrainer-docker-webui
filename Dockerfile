@@ -1,4 +1,4 @@
-ARG BASE_TAG="develop"
+ARG BASE_TAG="1.16.1-rolling-daily"
 ARG BASE_IMAGE="core-cuda-focal"
 FROM kasmweb/$BASE_IMAGE:$BASE_TAG AS base
 
