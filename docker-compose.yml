@@ -6,6 +6,7 @@ services:
       - ./instance:/instance
       - /run/dbus/system_bus_socket:/run/dbus/system_bus_socket 
     ports:
+      - 6006:6006/tcp
       - 5901:5901/tcp
       - 5901:5901/udp
       - 6901:6901/tcp
