@@ -19,7 +19,7 @@ Now it's possible to run OneTrainer UI over the cloud!
 ## Reset to factory defaults
 If you want to reset the data to factory defaults, follow these steps:
 
-* `docker compose stop`
+* `docker compose down`
 * `mv ./instance/ ./instance-old/`
 * `mkdir ./instance`
 * `docker compose up -d`
