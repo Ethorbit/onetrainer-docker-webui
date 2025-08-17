@@ -22,4 +22,4 @@ If you want to reset the data to factory defaults, follow these steps:
 * `docker compose stop`
 * `mv ./instance/ ./instance-old/`
 * `mkdir ./instance`
-* `docker compose up --build -d`
+* `docker compose up -d`
