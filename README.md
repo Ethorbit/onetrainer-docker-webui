@@ -1,4 +1,4 @@
-A modification of OneTrainer's [NVIDIA-UI Docker Image](https://github.com/Nerogar/OneTrainer/blob/daae18eaed8c0fa39289b2ff79cc2c1e08577fcb/resources/docker/NVIDIA-UI.Dockerfile) which leverages [KasmVNC](https://kasmweb.com/kasmvnc) to display the GUI through your browser.
+A modification of [OneTrainer's NVIDIA-UI Docker Image](https://github.com/Nerogar/OneTrainer/blob/daae18eaed8c0fa39289b2ff79cc2c1e08577fcb/resources/docker/NVIDIA-UI.Dockerfile) which leverages [KasmVNC](https://kasmweb.com/kasmvnc) to display the GUI through your browser.
 
 Now it's possible to run OneTrainer UI over the cloud!
 
@@ -17,4 +17,9 @@ Now it's possible to run OneTrainer UI over the cloud!
 * OneTrainer should appear and its data will go to ./instance/
 
 ## Reset to factory defaults
-Simply empty the instance directory and start the container to reset OneTrainer to its defaults
+If you want to reset the data to factory defaults, follow these steps:
+
+* `docker compose stop`
+* `mv ./instance/ ./instance-old/`
+* `mkdir ./instance`
+* `docker compose up --build -d`
