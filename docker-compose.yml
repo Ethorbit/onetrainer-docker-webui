@@ -1,0 +1,23 @@
+services:
+  onetrainer-webui:
+    build:
+      context: .
+    volumes:
+      - ./workspace:/workspace
+      - /run/dbus/system_bus_socket:/run/dbus/system_bus_socket 
+    ports:
+      - 5901:5901/tcp
+      - 5901:5901/udp
+      - 6901:6901/tcp
+      - 6901:6901/udp
+    environment:
+      VNC_PORT: 5901
+      NO_VNC_PORT: 6901
+      VNC_PW: ${VNC_PW:-onetrainer}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [compute,video,graphics,utility]
