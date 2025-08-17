@@ -57,11 +57,16 @@ RUN rm /usr/bin/xfce4-panel
 # This just breaks the image, above is the workaround
 # apt-get remove -y xfce4-panel
 
+#
+# I will now proceed to fix errors because no one's stuff ever works :D
+#
+
 RUN echo "Fixing: ModuleNotFoundError: No module named 'cups'" &&\
     apt-get purge -y system-config-printer
 ######### End Customizations ###########
 
-RUN chown -R 1000:0 /home/kasm-default-profile/
+RUN chown -R 1000:0 /home/kasm-default-profile/ &&\
+    chown -R 1000:0 /OneTrainer/
 
 ENV HOME /home/kasm-user
 WORKDIR $HOME

@@ -3,7 +3,7 @@ services:
     build:
       context: .
     volumes:
-      - ./workspace:/workspace
+      - ./instance:/instance
       - /run/dbus/system_bus_socket:/run/dbus/system_bus_socket 
     ports:
       - 5901:5901/tcp

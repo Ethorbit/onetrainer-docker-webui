@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 set -ex
-START_COMMAND="python /OneTrainer/scripts/train_ui.py"
+START_COMMAND="python /instance/scripts/train_ui.py"
 PGREP="python"
 export MAXIMIZE="false"
 export MAXIMIZE_NAME="OneTrainer UI"
@@ -40,7 +40,6 @@ kasm_exec() {
     if [ -n "$URL" ] ; then
         /usr/bin/filter_ready
         /usr/bin/desktop_ready
-        cd /OneTrainer
         $START_COMMAND $ARGS $OPT_URL
     else
         echo "No URL specified for exec command. Doing nothing."
@@ -65,7 +64,6 @@ kasm_startup() {
                 /usr/bin/filter_ready
                 /usr/bin/desktop_ready
                 set +e
-                cd /OneTrainer
                 $START_COMMAND $ARGS $URL
                 set -e
             fi
@@ -77,6 +75,14 @@ kasm_startup() {
     fi
 
 } 
+
+if [ -z "$(ls -A /instance)" ]; then
+    echo "Copying OneTrainer into the /instance volume.."
+    cp -rap /OneTrainer/. /instance/
+    echo "Done! If you want to reset OneTrainer back to factory defaults, restart the container with an empty /instance."
+fi
+
+cd /instance
 
 if [ -n "$GO" ] || [ -n "$ASSIGN" ] ; then
     kasm_exec

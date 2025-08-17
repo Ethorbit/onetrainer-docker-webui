@@ -5,7 +5,7 @@ Now it's possible to run OneTrainer UI over the cloud!
 ## Steps
 * `git clone https://github.com/Ethorbit/onetrainer-docker-webui`
 * `cd onetrainer-docker-webui`
-* `mkdir workspace`
+* `mkdir instance`
 * `mkdir OneTrainer`
 * `git clone https://github.com/Nerogar/OneTrainer.git ./OneTrainer`
 * `cd OneTrainer`
@@ -14,4 +14,7 @@ Now it's possible to run OneTrainer UI over the cloud!
 * `docker compose up --build -d`
 * Connect to https://machine-ip:6901/
 * Enter `kasm_user` as the username and `onetrainer` as the password
-* OneTrainer should appear
+* OneTrainer should appear and its data will go to ./instance/
+
+## Reset to factory defaults
+Simply empty the instance directory and start the container to reset OneTrainer to its defaults
